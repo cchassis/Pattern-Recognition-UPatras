@@ -1,0 +1,306 @@
+                 #########################
+                 # The Satimage database #
+                 #########################
+
+1. Sources:
+
+     (*) This database is taken from the ftp anonymous "UCI Repository Of 
+	 Machine Learning Databases and Domain Theories" 
+	 (ics.uci.edu: pub/machine-learning-databases).
+
+    The  database was in use in the European StatLog project, which
+    involves comparing the performances of machine learning,
+    statistical, and neural network algorithms on data sets from real-world
+    industrial areas including medicine, finance, image analysis, and
+    engineering design.
+
+
+     (a) Author:
+
+        This database was provided to UCI by:
+
+	        Ross D. King
+                Department of Statistics and Modelling Science
+                University of Strathclyde
+                Glasgow G1 1XH
+                Scotland U.K.
+                +44 41 552-4400 x 3033
+                Fax +44 41 552-4711
+                ross@turing.uk.ac
+
+     (b) Original source:
+	
+	The original Landsat data for this database was generated
+	from data purchased from NASA by the Australian Centre
+	for Remote Sensing, and used for research at:
+
+		The Centre for Remote Sensing
+		University of New South Wales
+		Kensington, PO Box 1
+		NSW 2033 Australia.
+
+
+
+2. Past Usage:
+
+    Feng,C., Sutherland,A., King,S., Muggleton,S. & Henery,R.
+    (1993). Comparison of Machine Learning Classifiers to 
+    Statistics and Neural Networks. AI & Stats Conf. 93.
+
+    D. Michie, D.J. Spiegelhalter, and C.C. Taylor, editors.
+    Machine learning, Neural and Statistical Classification.
+    Ellis Horwood Series In Artificial Intelligence,
+    England, 1994.
+
+    Voz J.L., Verleysen M., Thissen P. and Legat J.D.,
+    Suboptimal Bayesian classification by vector quantization with small clusters
+    ESANN95-European Symposium on Artificial Neural Networks,
+    April 1995, M. Verleysen editor, D facto publications, Brussels, Belgium.
+    
+    Guerin-Dugue, A. and others,
+    Deliverable R3-B4-P - Task B4: Benchmarks,  Technical report,
+    Elena-NervesII "Enhanced Learning for Evolutive Neural Architecture", 
+    ESPRIT-Basic Research Project  Number 6891,
+    June 1995
+
+
+
+3. Relevant Information:
+
+    This database was generated from Landsat Multi-Spectral Scanner
+    image data.  These and other forms of remotely sensed imagery can
+    be purchased at a price from relevant governmental authorities. The
+    data is usually in binary form, and distributed on magnetic
+    tape(s).
+
+    The Landsat satellite data is one of the many sources of information
+    available for a scene. The interpretation of a scene by integrating
+    spatial data of diverse types and resolutions including multispectral
+    and radar data, maps indicating topography, land use etc. is expected
+    to assume significant importance with the onset of an era characterised
+    by integrative approaches to remote sensing (for example, NASA's Earth
+    Observing System commencing this decade). Existing statistical methods 
+    are ill-equipped for handling such diverse data types. Note that this
+    is not true for Landsat MSS data considered in isolation (as in
+    this database). This data satisfies the important requirements
+    of being numerical and at a single resolution, and standard maximum-
+    likelihood classification performs very well. Consequently,
+    for this data, it should be interesting to compare the performance
+    of other methods against the statistical approach.
+
+    One frame of Landsat MSS imagery consists of four digital images
+    of the same scene in different spectral bands. Two of these are
+    in the visible region (corresponding approximately to green and
+    red regions of the visible spectrum) and two are in the (near)
+    infra-red. Each pixel is a 8-bit binary word, with 0 corresponding
+    to black and 255 to white. The spatial resolution of a pixel is about
+    80m x 80m. Each image contains 2340 x 3380 such pixels.
+
+    The present database is a (tiny) sub-area of a scene, consisting of 
+    82 x 100 pixels.
+    The binary values were converted to their present ASCII form by Ashwin  
+    Srinivasan. The classification for each pixel was performed on the basis 
+    of an actual site visit by Ms. Karen Hall, when working for Professor
+    John A. Richards, at the Centre for Remote Sensing at the University
+    of New South Wales, Australia. Conversion to 3x3 neighbourhoods was done 
+    by Alistair Sutherland.
+    The initial test and training sets available at the "UCI Repository Of 
+    Machine Learning Databases" were concatanated and mixed to obtain this 
+    "satimage" database.  
+
+    Each line of data corresponds to a 3x3 square neighbourhood
+    of pixels completely contained within the 82x100 sub-area. Each line
+    contains the pixel values in the four spectral bands 
+    (converted to ASCII) of each of the 9 pixels in the 3x3 neighbourhood
+    and a number indicating the classification label of the central pixel.
+    The aim is to predict this classification, given the multi-spectral     
+    values. 
+
+    The database contains thus 6435 patterns with 36 attributes (4 spectral 
+    bands x 9 pixels in neighbourhood) plus the class label.
+    The attributes are numerical, in the range 0 to 255 (8 bits).
+    The class label is a code for the following classes:
+
+    Number	Class
+
+    1		red soil
+    2		cotton crop
+    3		grey soil
+    4		damp grey soil
+    5		soil with vegetation stubble
+    6		mixture class (all types present)
+    7		very damp grey soil
+
+    NB. There are no examples with class 6 in this dataset-
+    they have all been removed because of doubts about the 
+    validity of this class.
+
+    
+    The data is given in random order and certain lines of data
+    have been removed so you cannot reconstruct the original image
+    from this dataset.
+    
+    In each line of data the four spectral values for the top-left
+    pixel are given first followed by the four spectral values for
+    the top-middle pixel and then those for the top-right pixel,
+    and so on with the pixels read out in sequence left-to-right and
+    top-to-bottom. Thus, the four spectral values for the central
+    pixel are given by attributes 17,18,19 and 20. If you like you
+    can use only these four attributes, while ignoring the others.
+    This avoids the problem which arises when a 3x3 neighbourhood
+    straddles a boundary.
+
+
+
+
+4. Summary Statistics:
+
+   The dynamic of the attributes is in [27-157], with a mean value 83.47
+   and a standard deviation egal to 17.6.  
+   The database resulting from the centering and reduction by attribute of the Satimage 
+   database is on the ftp server in the `REAL/satimage/satimage_CR.dat.Z' file.
+
+   Class Distribution: 
+
+     Class  Instances Percentage
+	1     1533      23.82 %
+ 	2      703      10.92 %
+	3     1358      21.10 %
+	4      626       9.73 %
+	5      707      10.99 %
+	7     1508      23.43 %
+
+
+
+
+5. Confusion matrix obtained with the k_NN classifier on the
+   satimage_CR.dat database (test with the Leave_One_Out method). 
+   k was set to 3 in order to reach the minimum error rate : 8.89 +/- 1.6%.
+
+      {{0,     1,    2,    3,    4,    5,    7},
+       {1,  98.1,  0.2,  1.1,  0.1,  0.5,  0.0},
+       {2,   0.0, 96.5,  0.1,  0.7,  2.0,  0.7},
+       {3,   0.5,  0.1, 93.4,  4.6,  0.0,  1.4},
+       {4,   0.0,  0.8, 13.7, 70.6,  0.8, 14.1},
+       {5,   3.1,  0.8,  0.1,  0.8, 89.7,  5.5},
+       {7,   0.0,  0.1,  1.9,  7.3,  2.0, 88.7}}
+
+
+
+
+6. Result of the Principal Component Analysis:
+
+The Principal Components Analysis is a very classical method in pattern
+recognition [Duda73].
+PCA reduces the sample dimension in a linear way for the best
+representation in lower dimensions keeping the maximum of inertia. The
+best axe for the representation is however not necessary the best axe
+for the discrimination. After PCA, features are selected according to
+the percentage of initial inertia which is covered by the different
+axes and the number of features is determined according to the
+percentage of initial inertia to keep for the classification process.
+This selection method has been applied on the satimage_CR database.
+When quasi-linear correlations exists between some initial features,
+these redundant dimensions are removed by PCA and this preprocessing is
+then recommended.  In this case, before a PCA, the determinant of the
+data covariance matrix is near zero; this database is thus badly
+conditioned for all process which use this information (the quadratic
+classifier for example).
+
+The following files are available for the satimage database:
+  - ``satimage_PCA.dat.Z'', the projection of the ``satimage_CR'' database on its 
+        principal components (sorted in a decreasing order of the related 
+        inertia percentage; so, if you desire to work on the database projected on 
+        its x first principal components you only have to keep the x first attributes 
+        of the satimage_PCA.dat database and the class labels (last attribute)). 
+
+  - ``satimage_corr_circle.ps'', a graphical representation of the 
+        correlation between the initial attributes and the two first 
+        principal components,
+
+  - ``satimage_proj_PCA.ps'', a graphical representation of the 
+        projection of the initial database on the two first principal 
+        components,
+
+
+Table here below provides the inertia percentages associated to the 
+eigenvalues corresponding to the principal component axis sorted in 
+the decreasing order of their associated inertia percentage.
+99 percent of the total database inertia will remain if the 17 first principal
+components are kept.
+
+
+      Eigen   Value   Inertia    Cumulated
+      value          percentage   inertia
+  
+	1    16.3274  45.35       45.35
+	2    14.3575  39.88       85.24
+	3    1.57658   4.38       89.61
+	4    0.88933   2.47       92.09
+	5    0.65945   1.83       93.92
+	6    0.60908   1.69       95.61
+	7    0.37060   1.03       96.64
+	8    0.19197   0.53       97.17
+	9    0.12981   0.36       97.53
+       10    0.12588   0.35       97.88
+       11    0.08386   0.23       98.11
+       12    0.06657   0.18       98.30
+       13    0.06449   0.18       98.48
+       14    0.05722   0.16       98.64
+       15    0.04557   0.13       98.77
+       16    0.04422   0.12       98.89
+       17    0.04078   0.11       99.00
+       18    0.03677   0.10       99.10
+       19    0.02896   0.08       99.18
+       20    0.02773   0.08       99.26
+       21    0.02622   0.07       99.33
+       22    0.02480   0.07       99.40
+       23    0.02224   0.06       99.46
+       24    0.02053   0.06       99.52
+       25    0.01918   0.05       99.57
+       26    0.01866   0.05       99.63
+       27    0.01798   0.05       99.68
+       28    0.01728   0.05       99.72
+       29    0.01540   0.04       99.77
+       30    0.01494   0.04       99.81
+       31    0.01449   0.04       99.85
+       32    0.01285   0.04       99.88
+       33    0.01212   0.03       99.92
+       34    0.01082   0.03       99.95
+       35    0.01005   0.03       99.98
+       36    0.00844   0.02      100.00
+  
+This matrix can be found in the satimage_EV.dat file.
+    
+The Discriminant Factorial Analysis (DFA) can be applied to a learning
+database where each learning sample belongs to a particular class
+[Duda73].  The number of discriminant features selected by DFA is fixed
+in function of the number of classes (c) and of the number of input
+dimensions (d); this number is equal to the minimum between d and c-1.
+In the usual case where d is greater than c, the output dimension is
+fixed equal to the number of classes minus one and the discriminant
+axes are selected in order to maximize the between-variance and to
+minimize the within-variance of the classes.
+The discrimination power (ratio of the projected between-variance over
+the projected within-variance) is not the same for each discriminant
+axis: this ratio decreases for each axis. So for a problem with many
+classes, this preprocessing will not be always efficient as the last
+output features will not be so discriminant. This analysis uses the
+information of the inverse of the global covariance matrix, so the
+covariance matrix must be well conditioned (for example, a preliminary
+PCA must be applied to remove the linearly correlated dimensions).
+
+The Discriminant Factorial Analysis (DFA) has been applied on the 18
+first principal components of the satimage_PCA database (thus by
+keeping only the 18 first attributes of these databases before to apply
+the DFA preprocessing) in order to build the satimage_DFA.dat.Z
+database file, having 5 dimensions (the satimage database having 6
+classes).
+
+
+[Duda73]
+Duda, R.O. and Hart, P.E.,
+Pattern Classification and Scene Analysis,
+John Wiley & Sons, 1973.
+
+

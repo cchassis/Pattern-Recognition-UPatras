@@ -1,0 +1,19 @@
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26
+x-box: continuous
+y-box:continuous
+width:continuous
+high :continuous
+onpix:continuous
+x-bar:continuous
+y-bar:continuous
+x2bar:continuous
+y2bar:continuous
+xybar:continuous
+x2ybr:continuous
+xy2br:continuous
+x-ege:continuous
+xegvy:continuous
+y-ege:continuous
+yegvx:continuous
+
+ 
